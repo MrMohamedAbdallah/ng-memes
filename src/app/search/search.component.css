@@ -1,0 +1,60 @@
+:host{
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    min-height: 500px;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    width: 250px;
+    background-color: #F7F7F7;
+    padding: 100px 10px 10px 10px;
+    box-shadow: 8px 0px 20px rgba(0, 0, 0, 0.144);
+}
+
+.img-container{
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.img-container::before{
+    content: "Choose";
+    width: 100%;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity .3s;
+}
+
+
+.img-container:hover::before{
+    opacity: 1;
+    animation: popup .3s ease-in-out forwards;
+}
+@keyframes popup{
+    0%{ transform: translate(-50%, -50%) scale(.8)}
+    70%{ transform: translate(-50%, -50%) scale(1.2)}
+    100%{ transform: translate(-50%, -50%) scale(1)}
+}
+
+.img-container > img{
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    border: 1px solid #333;
+    transition: opacity .2s;
+}
+
+.img-container:hover > img{
+    opacity: .9;
+}

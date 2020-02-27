@@ -1,0 +1,104 @@
+:host {
+    display: block;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    user-select: none;
+    box-sizing: border-box;
+    background-color: white;
+}
+:host .hand{
+    display: none;
+}
+
+:host(.selected) .hand{
+    display: block;
+}
+
+.txt-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    font-size: 24px;
+    font-family: Rajdhani;
+    font-weight: bolder;
+    color: black;
+    background-color: white;
+    
+}
+
+.hand{
+    position: absolute;
+    background-color: rgb(49, 155, 255);
+    user-select: none;
+}
+
+
+.hand-top{
+    width: 100%;
+    height: 4px;
+    top: 0px;
+    left: 0px;
+}
+.hand-right{
+    height: 100%;
+    width: 4px;
+    top: 0px;
+    right: 0px;
+}
+.hand-bottom{
+    width: 100%;
+    height: 4px;
+    bottom: 0px;
+    left: 0px;
+}
+.hand-left{
+    height: 100%;
+    width: 4px;
+    top: 0px;
+    left: 0px;
+}
+
+.hand-top, .hand-bottom{
+    cursor: n-resize;
+}
+.hand-right, .hand-left{
+    cursor: w-resize;
+}
+
+.double-hand{
+    width: 4px;
+    height: 4px;
+}
+
+.hand-top-right {
+    top: 0px;
+    right: 0px;
+    left: auto;
+    bottom: auto;
+    cursor: nesw-resize;
+}
+.hand-top-left {
+    top: 0px;
+    right: auto;
+    left: 0px;
+    bottom: auto;
+    cursor: nwse-resize;
+}
+.hand-bottom-right {
+    top: auto;
+    right: 0px;
+    left: auto;
+    bottom: 0px;;
+    cursor: nwse-resize;
+}
+.hand-bottom-left {
+    top: auto;
+    right: auto;
+    left: left;
+    bottom: 0px;
+    cursor: nesw-resize;
+}

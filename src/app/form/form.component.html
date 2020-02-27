@@ -1,0 +1,119 @@
+<ul
+  (click)="menuOpen = !menuOpen"
+  [ngClass]="{ open: menuOpen }"
+  class="hum-icon"
+>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<div class="form-container" [ngClass]="{ open: menuOpen }">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Form Group -->
+    <div class="form-group mb-4">
+      <label for="text" class="font-weight-bold">Text</label>
+      <input
+        type="text"
+        formControlName="text"
+        name="text"
+        id="text"
+        class="form-control rounded-0"
+      />
+    </div>
+    <!-- /Form Group -->
+    <!-- Form Group -->
+    <div class="form-group mb-4">
+      <label for="align" class="font-weight-bold">Align</label>
+      <select
+        name="align"
+        formControlName="align"
+        id="align"
+        class="form-control rounded-0"
+      >
+        <option value="flex-start">{{ "left" | titlecase }}</option>
+        <option value="flex-end">{{ "right" | titlecase }}</option>
+        <option value="center">{{ "center" | titlecase }}</option>
+      </select>
+    </div>
+    <!-- /Form Group -->
+    <!-- Form Group -->
+    <div class="form-group mb-4">
+      <label for="font" class="font-weight-bold">Font Family</label>
+      <select
+        name="font"
+        formControlName="font"
+        id="font"
+        class="form-control rounded-0"
+      >
+        <option value="segeo ui">{{ "segeo" | titlecase }}</option>
+        <option value="roboto">{{ "roboto" | titlecase }}</option>
+        <option value="Rajdhani">{{ "Rajdhani" | titlecase }}</option>
+        <option value="arial">{{ "arial" | titlecase }}</option>
+      </select>
+    </div>
+    <!-- /Form Group -->
+    <!-- Form Group -->
+    <div class="form-group mb-4">
+      <label for="size" class="font-weight-bold">Font Size</label>
+      <input
+        formControlName="size"
+        type="number"
+        name="size"
+        id="size"
+        class="form-control rounded-0"
+      />
+    </div>
+    <!-- /Form Group -->
+    <!-- Form Group -->
+    <div class="form-group mb-4">
+      <label for="padding" class="font-weight-bold">Padding</label>
+      <input
+        formControlName="padding"
+        type="number"
+        min="0"
+        name="padding"
+        id="padding"
+        class="form-control rounded-0"
+      />
+    </div>
+    <!-- /Form Group -->
+    <hr />
+    <!-- Form Group -->
+    <div class="form-group mb-4" formGroupName="colors">
+      <label class="font-weight-bold mb-3">Colors</label>
+      <!-- Color input -->
+      <div class="color-input mb-3">
+        <input type="color" formControlName="font" name="font" />
+        <span></span>
+        Font
+      </div>
+      <!-- /Color input -->
+
+      <!-- Color input -->
+      <div class="color-input mb-3">
+        <input type="color" formControlName="background" name="background" />
+        <span></span>
+        background
+      </div>
+      <!-- /Color input -->
+    </div>
+    <!-- /Form Group -->
+    <hr class="my-4" />
+    <!-- Form Group -->
+    <div class="form-group d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary px-3 rounded-0 capture">
+        Save
+      </button>
+      <button
+        type="button"
+        (click)="onDelete()"
+        [disabled]="!element"
+        class="btn btn-danger px-3 rounded-0"
+      >
+        Delete
+      </button>
+    </div>
+    <!-- /Form Group -->
+  </form>
+</div>

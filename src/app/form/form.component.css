@@ -1,0 +1,51 @@
+.form-container {
+  display: block;
+  position: fixed;
+  top: 0px;
+  right: -300px;
+  height: 100vh;
+  min-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 250px;
+  background-color: #f7f7f7;
+  padding: 100px 10px 10px 10px;
+  transition: right .4s ease-in-out;
+  box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.144);
+}
+
+.form-container.open{
+    right: 0px;
+}
+
+.hum-icon {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  top: 50px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hum-icon li {
+  width: 40px;
+  height: 4px;
+  margin-bottom: 8px;
+  background-color: #333;
+  transition: 0.4s;
+  transform-origin: right;
+}
+
+
+
+.hum-icon.open li:nth-child(1) {
+  transform: rotateZ(-45deg);
+}
+.hum-icon.open li:nth-child(2) {
+  opacity: 0;
+}
+.hum-icon.open li:nth-child(3) {
+  transform: rotateZ(45deg)  translate(3px, 3px);
+}

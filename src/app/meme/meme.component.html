@@ -1,0 +1,32 @@
+<div class="img-placeholder" *ngIf="imgUrl == ''"></div>
+
+<ul class="plus" (click)="txtService.addTxt()" *ngIf="imgUrl != ''">
+  <li></li>
+  <li></li>
+</ul>
+
+<div
+  class="meme-container"
+  id="meme-container"
+  *ngIf="imgUrl != ''"
+  [ngStyle]="{background: 'url(' + imgUrl + ')'}"
+>
+  <img [src]="imgUrl" alt="" />
+
+  <!-- <div  class="img-holder">
+
+  </div> -->
+
+  <app-txt
+    *ngFor="let t of txt; let i = index"
+    [ngClass]="{ selected: i == selected }"
+    [index]="i"
+  ></app-txt>
+</div>
+
+
+<hr class="my-5">
+<h1 class="text-center">Saved Comic</h1>
+<div id="stored" class="d-flex justify-content-center my-5">
+
+</div>

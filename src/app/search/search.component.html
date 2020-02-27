@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="search-input" class="font-weight-bold">Search</label>
+    <input type="text" formControlName="search" id="search-input" class="form-control rounded-0">
+  </div>
+</form>
+
+<div
+  class="text-center img-container"
+  *ngFor="let img of imgs"
+  (click)="imgService.changeUrl(img)"
+>
+  <img [src]="img" alt="" />
+</div>
