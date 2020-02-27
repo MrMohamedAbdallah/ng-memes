@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TxtService } from "../shared/services/txt.service";
 import { ImgsService } from '../shared/services/imgs.service';
 
@@ -13,6 +13,8 @@ export class MemeComponent implements OnInit {
   selected: number = -1;
   imgUrl: string = "";
 
+  @ViewChild("img") img: ElementRef;
+
   constructor(private txtService: TxtService, public imgService: ImgsService) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class MemeComponent implements OnInit {
 
     this.imgService.urlChange.subscribe((url: string) => {
       this.imgUrl = url;
+      this.img.nativeElement.src = this.imgUrl;
     });
     
   }

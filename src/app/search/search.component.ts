@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl } from "@angular/forms";
 import { ImgsService } from '../shared/services/imgs.service';
 import { HttpClient, HttpParams } from '@angular/common/http';

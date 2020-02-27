@@ -8,11 +8,9 @@
 <div
   class="meme-container"
   id="meme-container"
-  *ngIf="imgUrl != ''"
   [ngStyle]="{background: 'url(' + imgUrl + ')'}"
->
-  <img [src]="imgUrl" alt="" />
-
+  >
+  <img alt="" #img/>
   <!-- <div  class="img-holder">
 
   </div> -->
